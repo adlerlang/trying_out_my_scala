@@ -73,10 +73,8 @@ Output:   fail
 ```
 
 ### Directions
-Please submit your solution in Scala and provide all source, test, documentation, and build support files in this repository. 
+Please submit your solution in Scala and provide all source, test, documentation, and build support files in this repository and email <ssteward@rewardsnetwork.com> to let us know when you're finished. 
 The project structure is up to you, but assume that this code will be deployed to production and your peers will be maintaining the code going forward.
-
-If you do not have professional Scala experience, we will take that into consideration during our assessment. 
 
 ### Criteria
 You will primarily be judged on the code directly related to the implementation of the stated problem and business rules:
@@ -88,6 +86,9 @@ You will primarily be judged on the code directly related to the implementation 
 * Use of functional programming concepts
 * Use of recognizable best practices and patterns
 * Submission of a working solution with basic usage instructions
-* Secondary evaluation criteria include the usage and evident knowledge of the tools, utilities, frameworks, and methodologies specified in the job description.
+
+Secondary evaluation criteria include the usage and evident knowledge of the tools, utilities, frameworks, and methodologies specified in the job description.
 
 We value creativity and initiative to learn new technology; however, be advised that candidates that focus solely on the primary criteria will be more successful than candidates that focus instead on intricate interface or usage of a breadth of technologies.
+
+If you do not have professional Scala experience, we will take that into consideration during our assessment. 
