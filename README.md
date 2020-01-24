@@ -13,7 +13,7 @@ Your challenge is to programmatically process a list of getting dressed commands
 1. Comma separated list of numeric commands
 
 | Command | Description | Hot Response | Cold Response |
-| ------ | ------ |
+| ------ | ------ | ------ | ------ |
 | 1 | Put on footwear | "sandals" | "boots" |
 | 2 | Put on headwear | “sunglasses” | "hat" |
 | 3 | Put on socks | "fail"  | "socks" |
