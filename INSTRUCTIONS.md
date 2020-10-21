@@ -73,8 +73,11 @@ Output:   fail
 ```
 
 ### Directions
-Please submit your solution in Scala and provide all source, test, documentation, and build support files in this repository and email <ssteward@rewardsnetwork.com> to let us know when you're finished. 
-The project structure is up to you, but assume that this code will be deployed to production and your peers will be maintaining the code going forward.
+* Please submit your solution in Scala and provide all source, test, documentation, and build support files in this repository. 
+* Create a new branch for your changes, then create a new Merge Request from your branch into `main` so we can review your submission.  
+* Email <ssteward@rewardsnetwork.com> to let us know when you're finished. 
+* Our dev team will review your Merge Request and if we like what we see, we'll follow up with you to go over your code in more detail.
+* The project structure is up to you, but assume that this code will be deployed to production and your peers will be maintaining the code going forward.
 
 ### Criteria
 You will primarily be judged on the code directly related to the implementation of the stated problem and business rules:
