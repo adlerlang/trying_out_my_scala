@@ -1,0 +1,4 @@
+[debug] [scala-coding-challenge-test] Classpath dependencies List()
+[debug] [scala-coding-challenge-test] Dependencies from configurations List(scala-coding-challenge)
+[debug] Bloop wrote the configuration of project 'scala-coding-challenge-test' to '/home/protomikex/scala-coding-challenge/.bloop/scala-coding-challenge-test.json'
+[success] Generated .bloop/scala-coding-challenge-test.json

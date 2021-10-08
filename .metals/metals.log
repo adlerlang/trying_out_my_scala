@@ -1,0 +1,54 @@
+[0m2021.10.08 15:10:49 INFO  Started: Metals version 0.10.7 in workspace '/home/protomikex/scala-coding-challenge' for client Visual Studio Code 1.61.0.[0m
+[0m2021.10.08 15:10:52 INFO  time: initialize in 2.41s[0m
+[0m2021.10.08 15:10:52 WARN  Build server is not auto-connectable.[0m
+[0m2021.10.08 15:11:05 INFO  running '/usr/lib/jvm/java-11-openjdk-amd64/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /tmp/metals6876899542835806037/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'[0m
+[0m2021.10.08 15:11:08 INFO  [info] welcome to sbt 1.5.5 (Ubuntu Java 11.0.11)[0m
+[0m2021.10.08 15:11:12 INFO  [info] loading settings for project scala-coding-challenge-build-build from metals.sbt ...[0m
+[0m2021.10.08 15:11:13 INFO  [info] loading project definition from /home/protomikex/scala-coding-challenge/project/project[0m
+[0m2021.10.08 15:11:19 INFO  [info] loading settings for project scala-coding-challenge-build from metals.sbt ...[0m
+[0m2021.10.08 15:11:19 INFO  [info] loading project definition from /home/protomikex/scala-coding-challenge/project[0m
+[0m2021.10.08 15:11:23 INFO  [success] Generated .bloop/scala-coding-challenge-build.json[0m
+[0m2021.10.08 15:11:23 INFO  [warn] Removed stale /home/protomikex/scala-coding-challenge/project/.bloop/reward-build.json[0m
+[0m2021.10.08 15:11:23 INFO  [success] Total time: 4 s, completed Oct 8, 2021, 3:11:23 PM[0m
+[0m2021.10.08 15:11:26 INFO  [info] loading settings for project scala-coding-challenge from build.sbt ...[0m
+[0m2021.10.08 15:11:26 INFO  [info] set current project to michael-adler-reward-test (in build file:/home/protomikex/scala-coding-challenge/)[0m
+[0m2021.10.08 15:11:26 INFO  [success] Generated .bloop/scala-coding-challenge.json[0m
+[0m2021.10.08 15:11:26 INFO  [success] Generated .bloop/scala-coding-challenge-test.json[0m
+[0m2021.10.08 15:11:26 INFO  [success] Total time: 0 s, completed Oct 8, 2021, 3:11:27 PM[0m
+[0m2021.10.08 15:11:28 INFO  time: ran 'sbt bloopInstall' in 22s[0m
+[0m2021.10.08 15:11:28 INFO  Attempting to connect to the build server...[0m
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /tmp/bsp-launcher7968336225674976718/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading 2 projects from '/home/protomikex/scala-coding-challenge/.bloop'...
+[0m[32m[D][0m Loading project from '/home/protomikex/scala-coding-challenge/.bloop/scala-coding-challenge-test.json'
+[0m[32m[D][0m Loading project from '/home/protomikex/scala-coding-challenge/.bloop/scala-coding-challenge.json'
+[0m[32m[D][0m Loading previous analysis for 'scala-coding-challenge' from '/home/protomikex/scala-coding-challenge/target/streams/compile/bloopAnalysisOut/_global/streams/inc_compile_2.13.zip'.
+[0m[32m[D][0m Loading previous analysis for 'scala-coding-challenge-test' from '/home/protomikex/scala-coding-challenge/target/streams/test/bloopAnalysisOut/_global/streams/inc_compile_2.13.zip'.
+[0m[32m[D][0m Waiting for a connection at local:///tmp/bsp-launcher7968336225674976718/bsp.socket...
+The server is listening for incoming connections at local:///tmp/bsp-launcher7968336225674976718/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+[0m2021.10.08 15:11:28 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/protomikex/.cache/metals/bsp.trace.json[0m
+[0m2021.10.08 15:11:28 INFO  Attempting to connect to the build server...[0m
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /tmp/bsp-launcher11937653248249096836/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///tmp/bsp-launcher11937653248249096836/bsp.socket...
+The server is listening for incoming connections at local:///tmp/bsp-launcher11937653248249096836/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+[0m2021.10.08 15:11:28 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/protomikex/.cache/metals/bsp.trace.json[0m
+[0m2021.10.08 15:11:28 INFO  time: Connected to build server in 0.42s[0m
+[0m2021.10.08 15:11:28 INFO  Connected to Build server: Bloop v1.4.9[0m
+[0m2021.10.08 15:11:31 WARN  Could not find java sources in None. Java symbols will not be available.[0m
+[0m2021.10.08 15:11:36 INFO  time: indexed workspace in 8.24s[0m
+[0m2021.10.08 15:11:38 INFO  no build target: using presentation compiler with only scala-library: 2.13.3[0m
+[0m2021.10.08 15:12:44 INFO  compiling scala-coding-challenge (1 scala source)[0m
+[0m2021.10.08 15:12:51 WARN  1 deprecation (since 2.13.0); re-run with -deprecation for details[0m
+[0m2021.10.08 15:12:51 INFO  compiling scala-coding-challenge-test (1 scala source)[0m
+[0m2021.10.08 15:12:51 INFO  time: compiled scala-coding-challenge in 6.66s[0m
+[0m2021.10.08 15:12:52 INFO  time: compiled scala-coding-challenge-test in 1.52s[0m
+[0m2021.10.08 15:13:01 INFO  compiling scala-coding-challenge-test (1 scala source)[0m
+[0m2021.10.08 15:13:03 INFO  time: compiled scala-coding-challenge-test in 1.5s[0m
