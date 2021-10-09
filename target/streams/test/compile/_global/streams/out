@@ -1,5 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/protomikex/rewardnet/reward/src/test/scala/MainTest.scala:13:25: not enough arguments for method getReturn: (values: List[Int], wear: Map[Int,(String, String)], result: scala.collection.mutable.ListBuffer[String]): List[String].[0m
-[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter result.[0m
-[0m[[0m[31merror[0m] [0m[0m  var m = Main.getReturn(temp,wear)[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m

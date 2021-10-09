@@ -17,29 +17,41 @@ season(temp,values)
 
 }
 
+
+
+
+
+
+
 def getReturn(values: List[Int], wear: Map[Int,(String, String)], result: ListBuffer[String] ):List[String] = {
-  
-    
+   
+
 
    values match {
    case Nil => result.toList
-   case head::tail => var getValue:(String,String) = wear(head)
+  
+   case value::rest => var getValue:(String,String) = wear(value)
                                               
                     
-                      var remove = wear - head
+                      var remove = wear - value
                       
-                      
-                      getReturn(tail, remove,   result += getValue._2)
-  
+                      if(getValue._2 != "fail"){ 
+                      getReturn(rest, remove,   result += getValue._2)
+                      }
+                       else {
+                       getReturn(Nil, wear, result += getValue._2)  
+                       }
+
+ case value if (value(0) != 8) => getReturn(Nil, wear , result += "fail") 
      return result.toList
 
 
    }
        
-   }
+   
 
 
-
+  }
 
 
 def season(temp:String, values:List[Any]){
