@@ -19,41 +19,6 @@ season(temp,values)
 
 
 
-
-
-
-
-def getReturn(values: List[Int], wear: Map[Int,(String, String)], result: ListBuffer[String] ):List[String] = {
-   
-
-
-   values match {
-   case Nil => result.toList
-  
-   case value::rest => var getValue:(String,String) = wear(value)
-                                              
-                    
-                      var remove = wear - value
-                      
-                      if(getValue._2 != "fail"){ 
-                      getReturn(rest, remove,   result += getValue._2)
-                      }
-                       else {
-                       getReturn(Nil, wear, result += getValue._2)  
-                       }
-
- case value if (value(0) != 8) => getReturn(Nil, wear , result += "fail") 
-     return result.toList
-
-
-   }
-       
-   
-
-
-  }
-
-
 def season(temp:String, values:List[Any]){
    temp match{
      case "Hot" => hot()
@@ -95,11 +60,56 @@ def cold(): Map[Int, (String,String)]= Map(
 ).withDefaultValue(("fail", "fail")) 
 
 
+def getReturn(values: List[Int], wear: Map[Int,(String, String)], result: ListBuffer[String] ):List[String] = {
+   
 
 
-
-
+   values match {
+   case Nil => result.toList
+ 
+   // * Socks must be put on before footwear - [3,1]
+  // *  Pants must be put on before footwear - [6,1]
+  //*   The shirt must be put on before the headwear or jacket -[4,2]
   
+  case value::_  if(value == 1 &&  wear(3) != ("fail", "fail")) || 
+                    (value == 6) && wear(1) != ("fail", "fail") =>  
+                    var getValue:(String,String) = wear(value)
+                                         result += getValue._2
+                        getReturn(Nil, wear, result += "fail")
+   
+  case value::_   if(value  == 2 || wear(value)._2 == "jacket" && wear(4) != ("fail", "fail") )=>
+                        var getValue:(String,String) = wear(value)
+                        result += getValue._2
+                        getReturn(Nil, wear, result += "fail")
+  
+  
+  
+   case value::rest => var getValue:(String,String) = wear(value)
+                                              
+                    
+                      var remove = wear - value
+                      
+                      if(getValue._2 != "fail"){ 
+                      getReturn(rest, remove,   result += getValue._2)
+                      }
+                       else {
+                       getReturn(Nil, wear, result += getValue._2)  
+                       }
+
+ 
+ case value if (value(0) != 8) => getReturn(Nil, wear , result += "fail") 
+ 
+     return result.toList
+
+
+   }
+       
+   
+
+
+  }
+
+
 
    
 
