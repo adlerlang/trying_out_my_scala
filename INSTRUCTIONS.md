@@ -6,7 +6,7 @@
 
 ## Ideas (Keep it readable and simple. Better testing is happening soon.)
 Coming from Erlang/Elixir/Clojure but mostly Elixir/Clojure datasets using maps are most
-common. Erlang is more focused on propslists (Lists of tuples) prior R16.... versions maps weren't even available yet and you can choose either style. 
+common. Erlang is more focused on propslists (Lists of tuples) R16_ and prior versions, maps weren't even available yet and you can choose either style today. 
  
 So this is my simple logic plan. 
 Seperated data into hot and cold data collections that are maps of tuples.

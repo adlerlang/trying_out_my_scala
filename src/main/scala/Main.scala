@@ -85,7 +85,6 @@ def getReturn(temp:String, values: List[Int], wear: Map[Int,(String, String)], r
                   
                  }
  
-                   print(wearMap)
                   if(wearMap.size == 0){
                 
                   println(finalResult.mkString(",")) 
