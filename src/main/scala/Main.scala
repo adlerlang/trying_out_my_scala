@@ -1,30 +1,40 @@
+
+import scala.io.StdIn.readLine
 import scala.collection.immutable.SortedMap
 import scala.collection.mutable.ListBuffer
 
 
-
-
-
-
-
 object Main extends App {
 
-def main(args: Array[Any]): Unit = {
-  val arrayToList:List[Any] =args.toList
-val temp:String= arrayToList.head.toString()
-val values: List[Any] = arrayToList.tail
-season(temp,values)
+ print("Please enter Temp (hot or cold) followed by selected numbers: ")
+    val cmd:List[String]= readLine().split("[\\s,]+" ).toList
+    val temp:String = cmd.head.toLowerCase()
+    //if indexs were ints then map conversion is need but if map indexes were strings unneccessary
+     
+    try {
+    val values:List[Int] = cmd.tail.map(_.toInt)
+    season(temp, values)}
+    catch{
+    case  _:Exception => print("Wrong entry (choose hot/cold) or values are digits (1-8)")
+    }
+   
 
-}
 
+def season(temp:String, values:List[Int]):List[String]={
+     val listBufferIntialize:ListBuffer[String] = ListBuffer()
 
-
-def season(temp:String, values:List[Any]){
+   if(values(0) == 8 ){
    temp match{
-     case "Hot" => hot()
-     case "Cold" => cold()
+     case "hot"  => getReturn(temp,values, hot(), listBufferIntialize)
+     case "cold" => getReturn(temp, values, Main.cold(), listBufferIntialize)
+     case _ => List("Was not hot or cold")
 }
-
+   }
+  else{
+    println("fail")
+    val listFail:List[String] = List("fail")
+        listFail
+  }
 
 }
 
@@ -60,46 +70,82 @@ def cold(): Map[Int, (String,String)]= Map(
 ).withDefaultValue(("fail", "fail")) 
 
 
-def getReturn(values: List[Int], wear: Map[Int,(String, String)], result: ListBuffer[String] ):List[String] = {
+def getReturn(temp:String, values: List[Int], wear: Map[Int,(String, String)], result: ListBuffer[String] ):List[String] = {
    
 
+    val finalResult:List[String] =result.toList
 
    values match {
-   case Nil => result.toList
+       
+   case Nil  =>  
+                var wearMap = wear
+
+                 if(temp == "hot"){
+                  wearMap =  wearMap -- Set(3,5)
+                  
+                 }
  
-   // * Socks must be put on before footwear - [3,1]
-  // *  Pants must be put on before footwear - [6,1]
-  //*   The shirt must be put on before the headwear or jacket -[4,2]
-  
-  case value::_  if(value == 1 &&  wear(3) != ("fail", "fail")) || 
-                    (value == 6) && wear(1) != ("fail", "fail") =>  
+                   print(wearMap)
+                  if(wearMap.size == 0){
+                
+                  println(finalResult.mkString(",")) 
+                  finalResult
+                  }
+                  else{
+                  
+                    result.update(result.length - 1, "fail")        
+                     print(result.toList.mkString(","))
+                     finalResult
+                  }
+
+                 
+
+ 
+// * Socks must be put on before footwear 
+// *  Pants must be put on before footwear  
+case value::_  if(temp == "cold" && value == 1 &&  wear(3) != ("fail", "fail")) || 
+                    value == 1 && wear(6) != ("fail", "fail") => { 
                     var getValue:(String,String) = wear(value)
-                                         result += getValue._2
-                        getReturn(Nil, wear, result += "fail")
-   
-  case value::_   if(value  == 2 || wear(value)._2 == "jacket" && wear(4) != ("fail", "fail") )=>
+                    result += getValue._2
+                    getReturn(temp, Nil, wear, result += "fail")
+                    }
+// * The shirt must be put on before the headwear or jacket
+  case value::_   if( value  == 2  && wear(4) != ("fail", "fail")  ||
+                       temp == "cold" && wear(value)._2 == "jacket" &&  wear(4) != ("fail", "fail")
+                        )=>{ 
                         var getValue:(String,String) = wear(value)
                         result += getValue._2
-                        getReturn(Nil, wear, result += "fail")
+                        getReturn(temp,Nil, wear, result += "fail")
+                        }
   
   
+   // * remove unneccessary hot values
   
-   case value::rest => var getValue:(String,String) = wear(value)
+
+  
+   case value::rest => 
+     
+          var getValue:(String,String) = wear(value)
                                               
                     
+                    
+
                       var remove = wear - value
                       
+  
+
+
                       if(getValue._2 != "fail"){ 
-                      getReturn(rest, remove,   result += getValue._2)
+                      getReturn(temp, rest, remove,   result += getValue._2)
                       }
                        else {
-                       getReturn(Nil, wear, result += getValue._2)  
+                      
+
+                       getReturn(temp, Nil, wear, result += getValue._2)  
                        }
 
  
- case value if (value(0) != 8) => getReturn(Nil, wear , result += "fail") 
- 
-     return result.toList
+    
 
 
    }

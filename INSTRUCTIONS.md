@@ -1,5 +1,8 @@
-# Starting project
-  Decided to use SBT and keep it simple
+# Start Project
+  use sbt run to run project. You can run sbt test and run very minimal tests. From those tests seems bugs I was looking for are fixed and everything should work as expected. 
+  When I started was thinking between sbt and a shell sheet but decided to use sbt for ease of use. 
+
+  Thank You. 
 
 ## Ideas (Keep it readable and simple. Better testing is happening soon.)
 Coming from Erlang/Elixir/Clojure but mostly Elixir/Clojure datasets using maps are most
@@ -10,6 +13,8 @@ Seperated data into hot and cold data collections that are maps of tuples.
 Using recursion to match index to remove entries from map data so when duplicates happen on
 user entry of data, fail will default. Will soon be adding a recursive stop when fail does happen.
 Then work on order of wearing clothes, compile, and be able to enter values via terminal.
+
+
 
 
 
@@ -51,11 +56,11 @@ Regardless of how the program is invoked, the program must take the list of inpu
 -[x] * Only 1 piece of each type of clothing may be put on
 -[x] * You cannot put on socks when it is hot 
 -[x] * You cannot put on a jacket when it is hot
-* Socks must be put on before footwear - [3,1]
-* Pants must be put on before footwear - [6,1]
-* The shirt must be put on before the headwear or jacket -[4,2]
-* You cannot leave the house until all items of clothing are on (except socks and a jacket when it’s hot) 
-* If an invalid command is issued, rggit sespond with “fail” and stop processing commands
+-[x] * Socks must be put on before footwear -
+-[x] * Pants must be put on before footwear - 
+-[x]* The shirt must be put on before the headwear or jacket 
+-[x] * You cannot leave the house until all items of clothing are on (except socks and a jacket when it’s hot) 
+-[x] * If an invalid command is issued, respond with “fail” and stop processing commands
 
 
 ### Examples
