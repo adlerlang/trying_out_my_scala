@@ -1,5 +1,7 @@
 .metals
 .bloop
 .vscode
+.bsp
 project
 target
+bin
